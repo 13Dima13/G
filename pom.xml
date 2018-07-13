@@ -12,7 +12,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 
-		<junit.jupiter.version>5.2.0</junit.jupiter.version>
+		<junit.jupiter.version>5.3.0-M1</junit.jupiter.version>
 		<junit.platform.version>1.2.0</junit.platform.version>
 		<selenide.version>4.12.2</selenide.version>
 	</properties>
@@ -44,30 +44,34 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.0</version>
-                <configuration>
-                    <properties>
-                        <includeTags>smoke</includeTags>
-                    </properties>
-                </configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.junit.platform</groupId>
-						<artifactId>junit-platform-surefire-provider</artifactId>
-						<version>1.2.0</version>
-					</dependency>
-					<dependency>
-						<groupId>org.junit.jupiter</groupId>
-						<artifactId>junit-jupiter-engine</artifactId>
-						<version>${junit.jupiter.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
+	<plugins>
+		<!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
+		<plugin>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.22.0</version>
+			<configuration>
+				<parallel>all</parallel>
+				<perCoreThreadCount>true</perCoreThreadCount>
+				<threadCount>5</threadCount>
+				<perCoreThreadCount>false</perCoreThreadCount>
+				<properties>
+					<includeTags>${tag}</includeTags>
+				</properties>
+			</configuration>
+			<dependencies>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-surefire-provider</artifactId>
+					<version>1.2.0</version>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.jupiter</groupId>
+					<artifactId>junit-jupiter-engine</artifactId>
+					<version>${junit.jupiter.version}</version>
+				</dependency>
+			</dependencies>
+		</plugin>
+	</plugins>
+</build>
 
 </project>

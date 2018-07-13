@@ -13,6 +13,7 @@ package com.example.project;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -20,6 +21,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 class CalculatorTests {
 
 	@Test
+	//@Tag("smoke")
 	@DisplayName("1 + 1 = 2")
 	void addsTwoNumbers() {
 		Calculator calculator = new Calculator();
