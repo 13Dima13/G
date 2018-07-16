@@ -3,6 +3,7 @@ package com.example.project;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
@@ -21,6 +22,7 @@ public class TestThreads {
         Configuration.browser="chrome";
     }
     @Test
+    @DisplayName("Test 11111 ")
     @Tag("smoke")
     public void test1() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
