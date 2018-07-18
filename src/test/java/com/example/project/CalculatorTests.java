@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 class CalculatorTests {
 
     @Test
-    //@Tag("smoke")
+    @Tag("regression")
     @DisplayName("1 + 1 = 2")
     void addsTwoNumbers() {
         Calculator calculator = new Calculator();

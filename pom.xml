@@ -14,7 +14,12 @@
 
 		<junit.jupiter.version>5.3.0-M1</junit.jupiter.version>
 		<junit.platform.version>1.3.0-M1</junit.platform.version>
-		<selenide.version>4.12.2</selenide.version>
+		<selenide.version>4.12.3</selenide.version>
+
+        <slf4j-api.version>LATEST</slf4j-api.version>
+        <slf4j-simple.version>LATEST</slf4j-simple.version>
+
+		<threads>1</threads>
 	</properties>
 
 	<dependencies>
@@ -53,13 +58,21 @@
 			<artifactId>selenide</artifactId>
 			<version>${selenide.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple.version}</version>
+        </dependency>
+
 		<!--<dependency>-->
 			<!--<groupId>org.apache.maven.surefire</groupId>-->
 			<!--<artifactId>surefire-logger-api</artifactId>-->
-			<!--<version>2.22.0</version>-->
-			<!--&lt;!&ndash; to get around bug https://github.com/junit-team/junit5/issues/1367 &ndash;&gt;-->
-			<!--<scope>test</scope>-->
-			<!--<optional>true</optional>-->
+			<!--<version>2.21.0</version>-->
 		<!--</dependency>-->
 	</dependencies>
 
@@ -85,16 +98,24 @@
                 <!--<threadCountMethods>1</threadCountMethods>-->
 
 
-                <!--<forkCount>4</forkCount>-->
-                <!--<reuseForks>true</reuseForks>-->
+                <forkCount>${threads}</forkCount>
+                <reuseForks>false</reuseForks>
 
 
                 <!--<forkMode>always</forkMode>-->
 
-                <parallel>all</parallel>
-				<perCoreThreadCount>true</perCoreThreadCount>
-				<threadCount>5</threadCount>
-				<perCoreThreadCount>false</perCoreThreadCount>
+
+				<!--<parallel>methods</parallel>-->
+				<!--<threadCountMethods>5</threadCountMethods>-->
+				<!--<perCoreThreadCount>false</perCoreThreadCount>-->
+
+				<!--<parallel>classes</parallel>-->
+				<!--<threadCount>5</threadCount>-->
+
+				<!--<parallel>all</parallel>-->
+				<!--<perCoreThreadCount>true</perCoreThreadCount>-->
+				<!--<threadCount>5</threadCount>-->
+				<!--<perCoreThreadCount>false</perCoreThreadCount>-->
 				<properties>
 					<includeTags>${tag}</includeTags>
 				</properties>
@@ -109,6 +130,11 @@
 					<groupId>org.junit.jupiter</groupId>
 					<artifactId>junit-jupiter-engine</artifactId>
 					<version>${junit.jupiter.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.maven.surefire</groupId>
+					<artifactId>surefire-logger-api</artifactId>
+					<version>2.21.0</version>
 				</dependency>
 			</dependencies>
 		</plugin>

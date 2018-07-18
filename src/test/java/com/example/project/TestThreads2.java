@@ -14,11 +14,7 @@ import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-
-
-
-@IncludeEngines("jupiter-engine")
-public class TestThreads {
+public class TestThreads2 {
 
     @BeforeAll
     public static void setup(){
@@ -68,6 +64,7 @@ public class TestThreads {
     }
 
     @Test
+    @Tag("regression")
     public void test5() {
         open("https://mvnrepository.com/");
         $("#maincontent > h1").waitUntil(Condition.appears, 120000);
@@ -105,7 +102,6 @@ public class TestThreads {
     }
 
     @Test
-    @Tag("regression")
     public void test9() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
