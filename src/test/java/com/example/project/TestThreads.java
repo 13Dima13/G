@@ -7,7 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.suite.api.IncludeEngines;
-import org.junit.runner.RunWith;
 
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.System.out;
@@ -26,8 +25,7 @@ public class TestThreads {
     }
 
     @Test
-    @DisplayName("Test 11111 ")
-    @Tag("smoke")
+//    @Tag("smoke")
     public void test1() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
@@ -48,7 +46,6 @@ public class TestThreads {
     }
 
     @Test
-    @Tag("smoke")
     public void test3() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
@@ -58,7 +55,6 @@ public class TestThreads {
     }
 
     @Test
-    @Tag("smoke")
     public void test4() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);

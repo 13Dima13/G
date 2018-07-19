@@ -22,8 +22,7 @@ public class TestThreads2 {
     }
 
     @Test
-    @DisplayName("Test 11111 ")
-    @Tag("smoke")
+//    @Tag("smoke")
     public void test1() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
@@ -34,7 +33,6 @@ public class TestThreads2 {
 
 
     @Test
-    @Tag("regression")
     public void test2() {
         open("https://mvnrepository.com/");
         $("#maincontent > h1").waitUntil(Condition.appears, 120000);
@@ -44,7 +42,6 @@ public class TestThreads2 {
     }
 
     @Test
-    @Tag("smoke")
     public void test3() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
@@ -54,7 +51,6 @@ public class TestThreads2 {
     }
 
     @Test
-    @Tag("smoke")
     public void test4() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
@@ -64,7 +60,6 @@ public class TestThreads2 {
     }
 
     @Test
-    @Tag("regression")
     public void test5() {
         open("https://mvnrepository.com/");
         $("#maincontent > h1").waitUntil(Condition.appears, 120000);
@@ -74,7 +69,6 @@ public class TestThreads2 {
     }
 
     @Test
-    @Tag("regression")
     public void test6() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);

@@ -2,13 +2,13 @@ package com.example.project;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.Selenide.open;
 import static com.example.project.OversPage.*;
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class FastTest {
     @BeforeAll
@@ -16,7 +16,7 @@ public class FastTest {
         Configuration.browser = "chrome";
     }
     @Test
-    @Tag("regression")
+//    @Tag("smoke")
     public void shortTest(){
         open("https://forum.overclockers.ua/");
         searchField()
