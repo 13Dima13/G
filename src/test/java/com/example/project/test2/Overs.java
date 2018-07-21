@@ -16,7 +16,7 @@ public class Overs {
         Configuration.browser = "chrome";
     }
     @Test
-    @Tag("smoke")
+    //@Tag("smoke")
     public void shortTest(){
         open("https://forum.overclockers.ua/");
         searchField()

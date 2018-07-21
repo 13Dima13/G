@@ -19,7 +19,7 @@ public class Test3 {
     }
 
     @Test
-    @Tag("smoke")
+    //@Tag("smoke")
     public void test44444() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
