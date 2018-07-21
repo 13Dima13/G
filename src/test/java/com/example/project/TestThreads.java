@@ -11,12 +11,7 @@ import org.junit.platform.suite.api.IncludeEngines;
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
-
-
-
-@IncludeEngines("jupiter-engine")
+@Tag("regression")
 public class TestThreads {
 
     @BeforeAll
@@ -51,7 +46,7 @@ public class TestThreads {
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
         $("#maincontent > table > tbody > tr:nth-child(1) > th").shouldBe(Condition.text("License"));
         assertEquals("Maven Repository: log4j » log4j » 1.2.17", title());
-        out.println("test3 Passed");
+        out.println("Test3 Passed");
     }
 
     @Test

@@ -22,7 +22,7 @@ public class TestThreads2 {
     }
 
     @Test
-//    @Tag("smoke")
+    //@Tag("smoke")
     public void test1() {
         open("https://mvnrepository.com/artifact/log4j/log4j/1.2.17");
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
@@ -47,7 +47,7 @@ public class TestThreads2 {
         $("#maincontent > table > tbody > tr:nth-child(1) > th").waitUntil(Condition.appears, 120000);
         $("#maincontent > table > tbody > tr:nth-child(1) > th").shouldBe(Condition.text("License"));
         assertEquals("Maven Repository: log4j » log4j » 1.2.17", title());
-        out.println("test3 Passed");
+        out.println("Test3 Passed");
     }
 
     @Test

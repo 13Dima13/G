@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.test2;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -10,13 +10,13 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.example.project.test2.OversPage.*;
 import static java.lang.System.out;
 
-public class FastTest {
+public class Overs {
     @BeforeAll
     public static void setup(){
         Configuration.browser = "chrome";
     }
     @Test
-//  @Tag("smoke")
+    @Tag("smoke")
     public void shortTest(){
         open("https://forum.overclockers.ua/");
         searchField()
