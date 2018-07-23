@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Selenide.*;
 
-
 public class GoogleSearch {
 
 
